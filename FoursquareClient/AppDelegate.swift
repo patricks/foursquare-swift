@@ -30,6 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, LocationControllerDelegate {
     
     @IBAction func searchButtonClicked(sender : AnyObject) {
         // TODO: implement foursquare search here
+        println("clicked")
     }
     
     func didUpdateLocation(location : CLLocation) {
