@@ -13,8 +13,6 @@
         <customObject id="-3" userLabel="Application"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="FoursquareClient" customModuleProvider="target">
             <connections>
-                <outlet property="locationLabel" destination="D7H-rs-NiS" id="dPx-tc-gVT"/>
-                <outlet property="searchButton" destination="nPn-nK-vHW" id="S68-qL-j9x"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -676,26 +674,6 @@
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D7H-rs-NiS">
-                        <rect key="frame" x="18" y="323" width="444" height="17"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Location" usesSingleLineMode="YES" id="ZKu-8V-lwb">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nPn-nK-vHW">
-                        <rect key="frame" x="165" y="287" width="150" height="32"/>
-                        <buttonCell key="cell" type="push" title="Search FourSquare" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lNx-CE-zBI">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="searchButtonClicked:" target="Voe-Tx-rLC" id="cXQ-U9-3bh"/>
-                        </connections>
-                    </button>
-                </subviews>
             </view>
         </window>
     </objects>
