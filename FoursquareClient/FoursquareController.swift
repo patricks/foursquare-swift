@@ -39,7 +39,7 @@ class FoursquareController: NSObject, NSURLConnectionDelegate, NSURLConnectionDa
         var jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(queryData, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
         
         if jsonResult.count > 0 {
-            println("DBG: json: \(jsonResult)")
+            //println("DBG: json: \(jsonResult)")
             
             let metaResult: NSDictionary = jsonResult["meta"] as NSDictionary
             
@@ -58,11 +58,9 @@ class FoursquareController: NSObject, NSURLConnectionDelegate, NSURLConnectionDa
         println("DBG: venues: \(venues)")
         
         for venue in venues {
+            var currentVenue = FoursquareVenue(initDictionary: venue)
             
-            let currentVenue: NSDictionary = venue as NSDictionary
-            let name: NSString = currentVenue["name"] as NSString
-            
-            println("DBG: found: \(name)")
+            println("DBG: found: \(currentVenue.name)")
         }
     }
 }

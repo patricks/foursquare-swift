@@ -10,6 +10,7 @@
 		CD4B44B619411DE000C16000 /* FoursquareController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4B44B519411DE000C16000 /* FoursquareController.swift */; };
 		CD53E9801942736A00A8B276 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53E97E1942736A00A8B276 /* MainViewController.swift */; };
 		CD53E9811942736A00A8B276 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD53E97F1942736A00A8B276 /* MainViewController.xib */; };
+		CD792F0C1944BCB000639579 /* FoursquareVenue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD792F0B1944BCB000639579 /* FoursquareVenue.swift */; };
 		CDDC8931194052C9005990D7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC8930194052C9005990D7 /* main.swift */; };
 		CDDC8933194052C9005990D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC8932194052C9005990D7 /* AppDelegate.swift */; };
 		CDDC8935194052CA005990D7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDDC8934194052CA005990D7 /* Images.xcassets */; };
@@ -33,6 +34,7 @@
 		CD4B44B519411DE000C16000 /* FoursquareController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoursquareController.swift; sourceTree = "<group>"; };
 		CD53E97E1942736A00A8B276 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CD53E97F1942736A00A8B276 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		CD792F0B1944BCB000639579 /* FoursquareVenue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoursquareVenue.swift; sourceTree = "<group>"; };
 		CDDC892B194052C9005990D7 /* FoursquareClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoursquareClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDDC892F194052C9005990D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDDC8930194052C9005990D7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -65,6 +67,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD792F0D1944BCE900639579 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD792F0B1944BCB000639579 /* FoursquareVenue.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CD792F0E1944BCF100639579 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CDDC8932194052C9005990D7 /* AppDelegate.swift */,
+				CDDC894D19405472005990D7 /* LocationManager.swift */,
+				CD4B44B519411DE000C16000 /* FoursquareController.swift */,
+				CD53E97E1942736A00A8B276 /* MainViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		CDDC8922194052C9005990D7 = {
 			isa = PBXGroup;
 			children = (
@@ -87,10 +108,8 @@
 		CDDC892D194052C9005990D7 /* FoursquareClient */ = {
 			isa = PBXGroup;
 			children = (
-				CDDC8932194052C9005990D7 /* AppDelegate.swift */,
-				CDDC894D19405472005990D7 /* LocationManager.swift */,
-				CD4B44B519411DE000C16000 /* FoursquareController.swift */,
-				CD53E97E1942736A00A8B276 /* MainViewController.swift */,
+				CD792F0E1944BCF100639579 /* Controller */,
+				CD792F0D1944BCE900639579 /* Model */,
 				CDDC8934194052CA005990D7 /* Images.xcassets */,
 				CDDC8936194052CA005990D7 /* MainMenu.xib */,
 				CD53E97F1942736A00A8B276 /* MainViewController.xib */,
@@ -227,6 +246,7 @@
 			files = (
 				CDDC8933194052C9005990D7 /* AppDelegate.swift in Sources */,
 				CDDC8931194052C9005990D7 /* main.swift in Sources */,
+				CD792F0C1944BCB000639579 /* FoursquareVenue.swift in Sources */,
 				CD4B44B619411DE000C16000 /* FoursquareController.swift in Sources */,
 				CDDC894E19405472005990D7 /* LocationManager.swift in Sources */,
 				CD53E9801942736A00A8B276 /* MainViewController.swift in Sources */,
