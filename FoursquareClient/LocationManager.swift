@@ -10,7 +10,7 @@ import Cocoa
 import CoreLocation
 
 protocol LocationControllerDelegate {
-    func didUpdateLocation(location : CLLocation)
+    func didUpdateLocation(location: CLLocation)
 }
 
 class LocationController: NSObject, CLLocationManagerDelegate {
