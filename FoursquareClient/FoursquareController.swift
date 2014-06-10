@@ -19,6 +19,7 @@ class FoursquareController: NSObject, NSURLConnectionDelegate, NSURLConnectionDa
     var delegate: FoursquareControllerDelegate?
     
     func query(location: CLLocation) {
+        // TODO: remove the hardcoded client_id and client_secret
         let queryURL = "https://api.foursquare.com/v2/venues/search?client_id=31BCXQMOO4BS40SB2UPQE5S3FMH4WS1WTVHVFXAWN1TAQF1U&client_secret=KIK21T4JDYPLDI5FKJQXAP4SEO1JOENPZKPW3QO5OE1ZX0EX&v=20140604&ll=\(location.coordinate.latitude),\(location.coordinate.longitude)"
         
         let urlPath = queryURL.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
