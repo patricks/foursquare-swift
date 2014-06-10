@@ -9,17 +9,21 @@
 import Cocoa
 import CoreLocation
 
-class MainViewController: NSViewController, LocationControllerDelegate {
+class MainViewController: NSViewController, LocationControllerDelegate, FoursquareControllerDelegate {
     
     @IBOutlet var locationLabel: NSTextField
     @IBOutlet var searchButton: NSButton
+    @IBOutlet var venueTableView : NSTableView
     
     var mCurrentLocation: CLLocation?
     var mFoursquareController = FoursquareController()
     var mLocationController = LocationController()
+    
+    var venues: FoursquareVenue[]? = nil
 
     override func awakeFromNib()  {
         mLocationController.delegate = self
+        mFoursquareController.delegate = self
         searchButton.enabled = false
     }
     
@@ -44,5 +48,30 @@ class MainViewController: NSViewController, LocationControllerDelegate {
             
             searchButton.enabled = true
         }
+    }
+    
+    
+    func tableView(tableView: NSTableView!, viewForTableColumn tableColumn: NSTableColumn!, row: Int) -> NSView! {
+    //func tableView(tableView: NSTableView!, viewForTableColumn tableColumn: NSTableColumn!, row row: Int) -> NSView! {
+        
+        var cellView: NSTableCellView = tableView.makeViewWithIdentifier(tableColumn.identifier, owner: self) as NSTableCellView
+        
+        if tableColumn.identifier == "VenueColumn" {
+            cellView.textField.stringValue = venues![row].name
+            
+            return cellView
+        }
+        
+        return cellView
+    }
+    
+    func numberOfRowsInTableView(aTableView: NSTableView!) -> Int {
+        return !venues ? 0 : venues!.count
+    }
+    
+    func foundVenusForLocation(venues: FoursquareVenue[]) {
+        self.venues = venues
+        
+        venueTableView.reloadData()
     }
 }

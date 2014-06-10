@@ -9,9 +9,14 @@
 import Cocoa
 import CoreLocation
 
+protocol FoursquareControllerDelegate {
+    func foundVenusForLocation(venues: FoursquareVenue[])
+}
+
 class FoursquareController: NSObject, NSURLConnectionDelegate, NSURLConnectionDataDelegate {
     
     var queryData: NSMutableData = NSMutableData()
+    var delegate: FoursquareControllerDelegate?
     
     func query(location: CLLocation) {
         let queryURL = "https://api.foursquare.com/v2/venues/search?client_id=31BCXQMOO4BS40SB2UPQE5S3FMH4WS1WTVHVFXAWN1TAQF1U&client_secret=KIK21T4JDYPLDI5FKJQXAP4SEO1JOENPZKPW3QO5OE1ZX0EX&v=20140604&ll=\(location.coordinate.latitude),\(location.coordinate.longitude)"
@@ -55,12 +60,18 @@ class FoursquareController: NSObject, NSURLConnectionDelegate, NSURLConnectionDa
     }
     
     func printVenues(venues: NSDictionary[]) {
-        println("DBG: venues: \(venues)")
+        //println("DBG: venues: \(venues)")
+        
+        var currentVenues = FoursquareVenue[]()
         
         for venue in venues {
             var currentVenue = FoursquareVenue(initDictionary: venue)
             
-            println("DBG: found: \(currentVenue.name)")
+            currentVenues.append(currentVenue)
+            
+            //println("DBG: found: \(currentVenue.name)")
         }
+        
+        delegate?.foundVenusForLocation(currentVenues)
     }
 }

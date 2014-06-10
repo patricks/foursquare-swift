@@ -13,7 +13,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet var window: NSWindow
 
     func applicationDidFinishLaunching(aNotification: NSNotification?) {
-        let mainViewController = MainViewController(nibName: "MainViewController", bundle: nil)
+        var mainViewController = MainViewController(nibName: "MainViewController", bundle: nil)
+        
+        //mainViewController.venues = ["None", "Steiner"]
         
         window.contentView.addSubview(mainViewController.view)
         mainViewController.view.frame = window.contentView.bounds

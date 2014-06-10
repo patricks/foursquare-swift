@@ -48,6 +48,6 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager!,
         didFailWithError error: NSError!) {
-            println("FAIL");
+            println("ERROR: Failed to get location");
     }
 }
