@@ -12,7 +12,7 @@ class FoursquareVenue: NSObject {
     
     var name = ""
     
-    init(initDictionary: NSDictionary){
+    init(initDictionary: NSDictionary) {
         super.init()
         
         name = initDictionary["name"] as String
