@@ -50,10 +50,7 @@ class MainViewController: NSViewController, LocationControllerDelegate, Foursqua
         }
     }
     
-    
     func tableView(tableView: NSTableView!, viewForTableColumn tableColumn: NSTableColumn!, row: Int) -> NSView! {
-    //func tableView(tableView: NSTableView!, viewForTableColumn tableColumn: NSTableColumn!, row row: Int) -> NSView! {
-        
         var cellView: NSTableCellView = tableView.makeViewWithIdentifier(tableColumn.identifier, owner: self) as NSTableCellView
         
         if tableColumn.identifier == "VenueColumn" {

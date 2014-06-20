@@ -18,18 +18,49 @@ class FoursquareController: NSObject, NSURLConnectionDelegate, NSURLConnectionDa
     var queryData: NSMutableData = NSMutableData()
     var delegate: FoursquareControllerDelegate?
     
+    var clientID = ""
+    var clientSecret = ""
+    
+    init()  {
+        super.init()
+        readFoursquareSettings()
+    }
+    
     func query(location: CLLocation) {
-        // TODO: remove the hardcoded client_id and client_secret
-        let queryURL = "https://api.foursquare.com/v2/venues/search?client_id=31BCXQMOO4BS40SB2UPQE5S3FMH4WS1WTVHVFXAWN1TAQF1U&client_secret=KIK21T4JDYPLDI5FKJQXAP4SEO1JOENPZKPW3QO5OE1ZX0EX&v=20140604&ll=\(location.coordinate.latitude),\(location.coordinate.longitude)"
+        
+        if clientID.isEmpty && clientSecret.isEmpty {
+            println("ERROR: client_id and/or client_secret is missing")
+            return
+        }
+        
+        let queryURL = "https://api.foursquare.com/v2/venues/search?client_id=\(clientID)&client_secret=\(clientSecret)&v=20140604&ll=\(location.coordinate.latitude),\(location.coordinate.longitude)"
         
         let urlPath = queryURL.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
         var url: NSURL = NSURL(string: urlPath)
         var request: NSURLRequest = NSURLRequest(URL: url)
         var connection: NSURLConnection = NSURLConnection(request: request, delegate: self, startImmediately: false)
         
-        //println("Search Foursquare API at URL \(url)")
+        //println("DBG: Search Foursquare API at URL \(url)")
         
         connection.start()
+    }
+    
+    func readFoursquareSettings() {
+        let path = NSBundle.mainBundle().pathForResource("Foursquare", ofType: "plist")
+        let fileManager = NSFileManager.defaultManager()
+        
+        if (fileManager.fileExistsAtPath(path)) {
+            let plistDict = NSDictionary(contentsOfFile: path)
+            
+            if plistDict.count > 0 {
+                clientID = plistDict["clientID"] as String
+                clientSecret = plistDict["clientSecret"] as String
+            } else {
+                println("ERROR: Can not read plist file")
+            }
+        } else {
+            println("ERROR: Foursquare.plist file not found")
+        }
     }
     
     func connection(didReceiveResponse: NSURLConnection!, didReceiveResponse response: NSURLResponse!) {

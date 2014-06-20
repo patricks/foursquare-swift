@@ -18,6 +18,7 @@
 		CDDC8944194052CA005990D7 /* FoursquareClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC8943194052CA005990D7 /* FoursquareClientTests.swift */; };
 		CDDC894E19405472005990D7 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC894D19405472005990D7 /* LocationManager.swift */; };
 		CDDC8950194054B7005990D7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDDC894F194054B7005990D7 /* CoreLocation.framework */; };
+		CDE631731954590D00E74320 /* Foursquare.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDE631721954590D00E74320 /* Foursquare.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		CDDC8943194052CA005990D7 /* FoursquareClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoursquareClientTests.swift; sourceTree = "<group>"; };
 		CDDC894D19405472005990D7 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		CDDC894F194054B7005990D7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CDE631721954590D00E74320 /* Foursquare.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Foursquare.plist; sourceTree = "<group>"; };
+		CDE631741954641900E74320 /* FoursquareExample.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FoursquareExample.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 			children = (
 				CDDC892F194052C9005990D7 /* Info.plist */,
 				CDDC8930194052C9005990D7 /* main.swift */,
+				CDE631741954641900E74320 /* FoursquareExample.plist */,
+				CDE631721954590D00E74320 /* Foursquare.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 				CDDC8935194052CA005990D7 /* Images.xcassets in Resources */,
 				CD53E9811942736A00A8B276 /* MainViewController.xib in Resources */,
 				CDDC8938194052CA005990D7 /* MainMenu.xib in Resources */,
+				CDE631731954590D00E74320 /* Foursquare.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
